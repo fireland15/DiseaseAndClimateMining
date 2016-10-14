@@ -1,0 +1,1 @@
+﻿This project is for keeping the Entity Framework stuff together so that it is consistent throughout the projects in this project.
