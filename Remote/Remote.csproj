@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CsvModels\ChlamydiaToCoccidioidomycosis.cs" />
+    <Compile Include="DbModels\DataContext.cs" />
     <Compile Include="DbModels\DiseaseRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,17 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Remote.DbModels
 {
     public class DiseaseRecord
     {
-        public string Year { get; set; }
-        public string Location { get; set; }
-        public int Week { get; set; }
+        [Key]
+        [Column(Order = 0)]
+        [Required]
         public string DiseaseName { get; set; }
+
+        [Key]
+        [Column(Order = 1)]
+        [Required]
+        public string Location { get; set; }
+
+        [Key]
+        [Column(Order = 2)]
+        [Required]
+        public string Year { get; set; }
+
+        [Key]
+        [Column(Order = 3)]
+        [Required]
+        public int Week { get; set; }
+
+        [Required]
         public int NewInfections { get; set; }
     }
 }
