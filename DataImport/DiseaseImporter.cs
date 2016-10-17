@@ -11,37 +11,24 @@ namespace DataImport
 {
     public class DiseaseImporter
     {
-        private DataContext db;
+        private DataContext _db;
 
-        public DiseaseImporter()
+        public DiseaseImporter(DataContext db)
         {
-            if (File.Exists(@"DiseaseAndClimateDb.sdf"))
-                File.Delete(@"DiseaseAndClimateDb.sdf");
+            if (db == null)
+                throw new ArgumentNullException(nameof(db), "The db must not be null");
 
-            db = new DataContext();
-
-            Console.WriteLine(db.DiseaseRecords.Count());
+            _db = db;
         }
 
-        public void Import<TClass, TClassMap>(string filename) where TClassMap : CsvClassMap where TClass : IDiseaseCsvRecord
-        {
-            if (string.IsNullOrWhiteSpace(filename))
-                throw new ArgumentException("filename must be specified");
-
-            using (TextReader txtRdr = File.OpenText(filename))
-            {
-                CsvReader csvRdr = new CsvReader(txtRdr);
-                csvRdr.Configuration.RegisterClassMap<TClassMap>();
-                IEnumerable<TClass> records = csvRdr.GetRecords<TClass>();
-
-                db.DiseaseRecords.AddRange(records.Select(x => x.ToDiseaseRecord()));
-                db.SaveChanges();
-            }
-
-            Console.WriteLine(db.DiseaseRecords.Count());
-        }
-
-        public void Import2<TClassMap>(string disease, string filename) where TClassMap : CsvClassMap
+        /// <summary>
+        /// Reads records from the file specified by <code>filename</code> and uses the TClassMap generic paramter to create DiseaseRecord objects.
+        /// Saves the imported DiseaseRecord objects to the data context and sets their DiseaseName attribute to <code>disease</code>.
+        /// </summary>
+        /// <typeparam name="TClassMap">The map class to be used to map csv attributes to a class</typeparam>
+        /// <param name="disease">The disease of the imported records.</param>
+        /// <param name="filename">The filename of the file to be imported.</param>
+        public void Import<TClassMap>(string disease, string filename) where TClassMap : CsvClassMap
         {
             if (string.IsNullOrWhiteSpace(filename))
                 throw new ArgumentException("filename must be specified");
@@ -53,17 +40,13 @@ namespace DataImport
                 CsvReader csvRdr = new CsvReader(txtRdr);
                 csvRdr.Configuration.RegisterClassMap<TClassMap>();
                 IEnumerable<CsvDiseaseRecord> records = csvRdr.GetRecords<CsvDiseaseRecord>();
-
                 
-
-                db.DiseaseRecords.AddRange(records.Select(x => ConvertToDiseaseRecord(disease, x)));
-                db.SaveChanges();
+                _db.DiseaseRecords.AddRange(records.Select(x => ConvertToDiseaseRecord(disease, x)));
+                _db.SaveChanges();
             }
-
-            Console.WriteLine(db.DiseaseRecords.Count());
         }
 
-        public static DiseaseRecord ConvertToDiseaseRecord(string disease, CsvDiseaseRecord record)
+        private static DiseaseRecord ConvertToDiseaseRecord(string disease, CsvDiseaseRecord record)
         {
             return new DiseaseRecord
             {

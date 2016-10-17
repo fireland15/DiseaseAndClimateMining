@@ -1,4 +1,5 @@
 ﻿using DataImport.CsvModels.CsvMaps;
+using Remote.DbModels;
 
 namespace DataImport
 {
@@ -11,11 +12,14 @@ namespace DataImport
         };
        
         static void Main(string[] args)
-        { 
-            DiseaseImporter importer = new DiseaseImporter();
+        {
+            using (DataContext context = new DataContext())
+            {
+                DiseaseImporter importer = new DiseaseImporter(context);
 
-            importer.Import2<ChlamydiaMap>("chlamydia", Files[0]);
-
+                importer.Import<ChlamydiaMap>("chlamydia", Files[0]);
+                importer.Import<ChlamydiaMap>("chlamydia", Files[1]);
+            }
         }
     }
 }
