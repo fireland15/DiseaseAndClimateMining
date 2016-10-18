@@ -9,7 +9,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remote", "Remote\Remote.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B91CF957-D75C-4938-A8AF-AC68A0BE925C}"
 	ProjectSection(SolutionItems) = preProject
+		Data\2014_CryptosporidiosisToDengue.csv = Data\2014_CryptosporidiosisToDengue.csv
+		Data\2014_EhrlichiosisAnaplasmosisDisease.csv = Data\2014_EhrlichiosisAnaplasmosisDisease.csv
+		Data\2014_GiardiasisToHaemophilusInfluenza.csv = Data\2014_GiardiasisToHaemophilusInfluenza.csv
+		Data\2014_SpottedFeverRickettsiosisToSyphillis.csv = Data\2014_SpottedFeverRickettsiosisToSyphillis.csv
+		Data\2014_VaricellaToWestNileVirusDisease.csv = Data\2014_VaricellaToWestNileVirusDisease.csv
+		Data\2015_ChlamydiaToCoccidioidomycosis.csv = Data\2015_ChlamydiaToCoccidioidomycosis.csv
+		Data\2015_EhrlichiosisAnaplasmosisDisease.csv.csv = Data\2015_EhrlichiosisAnaplasmosisDisease.csv.csv
+		Data\2015_GiardiasisToHaemophilusInfluenza.csv = Data\2015_GiardiasisToHaemophilusInfluenza.csv
+		Data\2015_SpottedFeverRickettsiosisToSyphillis.csv = Data\2015_SpottedFeverRickettsiosisToSyphillis.csv
+		Data\2015_TetanusToVibriosis.csv = Data\2015_TetanusToVibriosis.csv
+		Data\2015_WestNileVirusDisease.csv = Data\2015_WestNileVirusDisease.csv
 		Data\2016_ChlamydiaToCoccidioidomycosis.csv = Data\2016_ChlamydiaToCoccidioidomycosis.csv
+		Data\2016_CryptosporidiosisToDengue.csv = Data\2016_CryptosporidiosisToDengue.csv
+		Data\2016_EhrlichiosisAnaplasmosisDisease.csv.csv = Data\2016_EhrlichiosisAnaplasmosisDisease.csv.csv
+		Data\2016_GiardiasisToHaemophilusInfluenza.csv = Data\2016_GiardiasisToHaemophilusInfluenza.csv
+		Data\2016_MumpsToRabies.csv = Data\2016_MumpsToRabies.csv
+		Data\2016_RubellaToSalmonellosis.csv = Data\2016_RubellaToSalmonellosis.csv
+		Data\2016_ShigaToxinToShigellosis.csv = Data\2016_ShigaToxinToShigellosis.csv
+		Data\2016_SpottedFeverRickettsiosisToSyphillis.csv = Data\2016_SpottedFeverRickettsiosisToSyphillis.csv
+		Data\2016_TetanusToVibriosis.csv = Data\2016_TetanusToVibriosis.csv
+		Data\2016_WestNileVirusDisease.csv = Data\2016_WestNileVirusDisease.csv
 	EndProjectSection
 EndProject
 Global
