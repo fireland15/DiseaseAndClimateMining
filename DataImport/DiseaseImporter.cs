@@ -35,14 +35,20 @@ namespace DataImport
             if (string.IsNullOrWhiteSpace(disease))
                 throw new ArgumentException("disease must be specified");
 
+            Console.WriteLine($"Importing {disease} from {filename}");
+
             using (TextReader txtRdr = File.OpenText(filename))
             {
                 CsvReader csvRdr = new CsvReader(txtRdr);
                 csvRdr.Configuration.RegisterClassMap<TClassMap>();
                 IEnumerable<CsvDiseaseRecord> records = csvRdr.GetRecords<CsvDiseaseRecord>();
-                
+
+                var count = _db.DiseaseRecords.Count();
                 _db.DiseaseRecords.AddRange(records.Select(x => ConvertToDiseaseRecord(disease, x)));
                 _db.SaveChanges();
+                count = _db.DiseaseRecords.Count() - count;
+
+                Console.WriteLine($"Added {count} new {disease} records");
             }
         }
 

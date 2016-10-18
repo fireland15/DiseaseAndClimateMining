@@ -18,18 +18,11 @@ namespace DataImport
         static void Main(string[] args)
         {
             ClearDatabase();
-
+            StartImportProcess();
 
             using (DataContext context = new DataContext())
             {
-                DiseaseImporter importer = new DiseaseImporter(context);
-
-                importer.Import<ChlamydiaMap>("chlamydia", Files[0]);
-                importer.Import<ChlamydiaMap>("chlamydia", Files[1]);
-                importer.Import<CryptosporidiosisMap>("cryptosporidiosis", Files[2]);
-
                 Console.WriteLine(context.DiseaseRecords.Count());
-                Console.WriteLine(context.DiseaseRecords.Select(x => x.NewInfections).ToArray().Aggregate((a, b) => a + b));
             }
         }
 
@@ -37,6 +30,20 @@ namespace DataImport
         {
             if (File.Exists("DiseaseAndClimateDb.sdf"))
                 File.Delete("DiseaseAndClimateDb.sdf");
+        }
+
+        private static void StartImportProcess()
+        {
+            using (DataContext context = new DataContext())
+            {
+                DiseaseImporter importer = new DiseaseImporter(context);
+
+                importer.Import<ChlamydiaMap>("chlamydia", Files[0]);
+                importer.Import<ChlamydiaMap>("chlamydia", Files[1]);
+                importer.Import<CryptosporidiosisMap>("cryptosporidiosis", Files[2]);
+                importer.Import<DengueFeverMap>("dengue_fever", Files[2]);
+                importer.Import<DengueHemorrhagicFeverMap>("dengue_hemorrhagic_fever", Files[2]);
+            }
         }
     }
 }

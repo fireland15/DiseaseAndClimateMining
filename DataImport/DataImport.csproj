@@ -68,6 +68,8 @@
     <Compile Include="CsvModels\CsvMaps\ChlamydiaMap.cs" />
     <Compile Include="CsvModels\CsvMaps\CoccidioidomycosisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\CryptosporidiosisMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\DengueFeverMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\DengueHemorrhagicFeverMap.cs" />
     <Compile Include="DiseaseImporter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
