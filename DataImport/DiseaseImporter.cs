@@ -6,12 +6,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace DataImport
 {
     public class DiseaseImporter
     {
         private DataContext _db;
+        private DateTime _timerStart;
 
         public DiseaseImporter(DataContext db)
         {
@@ -36,7 +38,7 @@ namespace DataImport
                 throw new ArgumentException("disease must be specified");
 
             Console.WriteLine($"Importing {disease} from {filename}");
-
+            StartTimer();
             using (TextReader txtRdr = File.OpenText(filename))
             {
                 CsvReader csvRdr = new CsvReader(txtRdr);
@@ -45,10 +47,10 @@ namespace DataImport
 
                 var count = _db.DiseaseRecords.Count();
                 _db.DiseaseRecords.AddRange(records.Select(x => ConvertToDiseaseRecord(disease, x)));
-                _db.SaveChanges();
+                _db.SaveChangesAsync();
                 count = _db.DiseaseRecords.Count() - count;
 
-                Console.WriteLine($"Added {count} new {disease} records");
+                Console.WriteLine($"\t{StopTimer()}ms - Added {count} new {disease} records");
             }
         }
 
@@ -62,6 +64,18 @@ namespace DataImport
                 Week = Convert.ToInt32(record.Week != string.Empty ? record.Week : "0"),
                 NewInfections = Convert.ToInt32(record.NewInfections != string.Empty ? record.NewInfections : "0")
             };
+        }
+
+        private void StartTimer()
+        {
+            _timerStart = DateTime.Now;
+        }
+
+        private int StopTimer()
+        {
+            var timerStop = DateTime.Now;
+            var elapsedMilliseconds = (timerStop - _timerStart).Milliseconds;
+            return elapsedMilliseconds;
         }
     }
 }

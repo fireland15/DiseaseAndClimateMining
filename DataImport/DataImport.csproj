@@ -65,11 +65,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CsvModels\CsvDiseaseRecord.cs" />
+    <Compile Include="CsvModels\CsvMaps\AnaplasmosisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\ChlamydiaMap.cs" />
     <Compile Include="CsvModels\CsvMaps\CoccidioidomycosisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\CryptosporidiosisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\DengueFeverMap.cs" />
     <Compile Include="CsvModels\CsvMaps\DengueHemorrhagicFeverMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\EhrlichiaChaffeensisMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\GiardiasisMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\GonorrheaMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\HaemophilusInfluenzaMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\SpottedFeverRickettsiosisMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\SyphilisMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\VaricellaMap.cs" />
     <Compile Include="DiseaseImporter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
