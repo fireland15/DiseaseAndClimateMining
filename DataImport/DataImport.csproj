@@ -66,19 +66,36 @@
   <ItemGroup>
     <Compile Include="CsvModels\CsvDiseaseRecord.cs" />
     <Compile Include="CsvModels\CsvMaps\AnaplasmosisMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\BabesiosisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\ChlamydiaMap.cs" />
     <Compile Include="CsvModels\CsvMaps\CoccidioidomycosisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\CryptosporidiosisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\DengueFeverMap.cs" />
     <Compile Include="CsvModels\CsvMaps\DengueHemorrhagicFeverMap.cs" />
-    <Compile Include="CsvModels\CsvMaps\EhrlichiaChaffeensisMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\EhrlichiosisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\GiardiasisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\GonorrheaMap.cs" />
     <Compile Include="CsvModels\CsvMaps\HaemophilusInfluenzaMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\HepatitisAMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\HepatitisBMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\HepatitisCMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\InvasivePneumococcalMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\LegionellosisMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\LymeDiseaseMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\MalariaMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\MeningococcalMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\MumpsMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\PertussisMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\RabiesMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\SamonellosisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\SpottedFeverRickettsiosisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\SyphilisMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\TetanusMap.cs" />
     <Compile Include="CsvModels\CsvMaps\VaricellaMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\VibriosisMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\WestNileVirusDiseaseMap.cs" />
     <Compile Include="DiseaseImporter.cs" />
+    <Compile Include="Diseases.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

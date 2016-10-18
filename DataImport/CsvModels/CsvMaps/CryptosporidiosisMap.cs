@@ -7,8 +7,8 @@ namespace DataImport.CsvModels.CsvMaps
         public override void CreateMap()
         {
             Map(m => m.Location).Name("Reporting Area");
-            Map(m => m.Year).Name("MMWRYear");
-            Map(m => m.Week).Name("MMWRWeek");
+            Map(m => m.Year).Name("MMWR Year");
+            Map(m => m.Week).Name("MMWR Week");
             Map(m => m.NewInfections).Name("Cryptosporidiosis, Current week");
         }
     }

@@ -7,28 +7,52 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataImport", "DataImport\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remote", "Remote\Remote.csproj", "{9B7FBF91-4447-44C6-88D4-6D20D957B28F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B91CF957-D75C-4938-A8AF-AC68A0BE925C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{8C2E3551-4519-4DA3-B5E2-09FD690F302E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CDC", "CDC", "{B60699CF-0409-4AF3-8C04-2D29BE2AD172}"
 	ProjectSection(SolutionItems) = preProject
-		Data\2014_CryptosporidiosisToDengue.csv = Data\2014_CryptosporidiosisToDengue.csv
-		Data\2014_EhrlichiosisAnaplasmosisDisease.csv = Data\2014_EhrlichiosisAnaplasmosisDisease.csv
-		Data\2014_GiardiasisToHaemophilusInfluenza.csv = Data\2014_GiardiasisToHaemophilusInfluenza.csv
-		Data\2014_SpottedFeverRickettsiosisToSyphillis.csv = Data\2014_SpottedFeverRickettsiosisToSyphillis.csv
-		Data\2014_VaricellaToWestNileVirusDisease.csv = Data\2014_VaricellaToWestNileVirusDisease.csv
-		Data\2015_ChlamydiaToCoccidioidomycosis.csv = Data\2015_ChlamydiaToCoccidioidomycosis.csv
-		Data\2015_GiardiasisToHaemophilusInfluenza.csv = Data\2015_GiardiasisToHaemophilusInfluenza.csv
-		Data\2015_SpottedFeverRickettsiosisToSyphillis.csv = Data\2015_SpottedFeverRickettsiosisToSyphillis.csv
-		Data\2015_TetanusToVibriosis.csv = Data\2015_TetanusToVibriosis.csv
-		Data\2015_WestNileVirusDisease.csv = Data\2015_WestNileVirusDisease.csv
-		Data\2016_ChlamydiaToCoccidioidomycosis.csv = Data\2016_ChlamydiaToCoccidioidomycosis.csv
-		Data\2016_CryptosporidiosisToDengue.csv = Data\2016_CryptosporidiosisToDengue.csv
-		Data\2016_EhrlichiosisAnaplasmosisDisease.csv.csv = Data\2016_EhrlichiosisAnaplasmosisDisease.csv.csv
-		Data\2016_GiardiasisToHaemophilusInfluenza.csv = Data\2016_GiardiasisToHaemophilusInfluenza.csv
-		Data\2016_MumpsToRabies.csv = Data\2016_MumpsToRabies.csv
-		Data\2016_RubellaToSalmonellosis.csv = Data\2016_RubellaToSalmonellosis.csv
-		Data\2016_ShigaToxinToShigellosis.csv = Data\2016_ShigaToxinToShigellosis.csv
-		Data\2016_SpottedFeverRickettsiosisToSyphillis.csv = Data\2016_SpottedFeverRickettsiosisToSyphillis.csv
-		Data\2016_TetanusToVibriosis.csv = Data\2016_TetanusToVibriosis.csv
-		Data\2016_WestNileVirusDisease.csv = Data\2016_WestNileVirusDisease.csv
+		Data\CDC\Babesiosis_2014.csv = Data\CDC\Babesiosis_2014.csv
+		Data\CDC\BabesiosisToCampylobacteriosis_2015.csv = Data\CDC\BabesiosisToCampylobacteriosis_2015.csv
+		Data\CDC\BabesiosisToCampylobacteriosis_2016.csv = Data\CDC\BabesiosisToCampylobacteriosis_2016.csv
+		Data\CDC\ChlamydiaToCoccidioidomycosis_2014.csv = Data\CDC\ChlamydiaToCoccidioidomycosis_2014.csv
+		Data\CDC\ChlamydiaToCoccidioidomycosis_2015.csv = Data\CDC\ChlamydiaToCoccidioidomycosis_2015.csv
+		Data\CDC\ChlamydiaToCoccidioidomycosis_2016.csv = Data\CDC\ChlamydiaToCoccidioidomycosis_2016.csv
+		Data\CDC\CryptosporidiosisToDengue_2014.csv = Data\CDC\CryptosporidiosisToDengue_2014.csv
+		Data\CDC\CryptosporidiosisToDengue_2015.csv = Data\CDC\CryptosporidiosisToDengue_2015.csv
+		Data\CDC\CryptosporidiosisToDengue_2016.csv = Data\CDC\CryptosporidiosisToDengue_2016.csv
+		Data\CDC\EhrlichiosisAnaplasmosisDisease_2014.csv = Data\CDC\EhrlichiosisAnaplasmosisDisease_2014.csv
+		Data\CDC\EhrlichiosisAnaplasmosisDisease_2015.csv = Data\CDC\EhrlichiosisAnaplasmosisDisease_2015.csv
+		Data\CDC\EhrlichiosisAnaplasmosisDisease_2016.csv = Data\CDC\EhrlichiosisAnaplasmosisDisease_2016.csv
+		Data\CDC\GiardiasisToHaemophilusInfluenza_2014.csv = Data\CDC\GiardiasisToHaemophilusInfluenza_2014.csv
+		Data\CDC\GiardiasisToHaemophilusInfluenza_2015.csv = Data\CDC\GiardiasisToHaemophilusInfluenza_2015.csv
+		Data\CDC\GiardiasisToHaemophilusInfluenza_2016.csv = Data\CDC\GiardiasisToHaemophilusInfluenza_2016.csv
+		Data\CDC\HepatitisViralAcute_2014.csv = Data\CDC\HepatitisViralAcute_2014.csv
+		Data\CDC\HepatitisViralAcute_2015.csv = Data\CDC\HepatitisViralAcute_2015.csv
+		Data\CDC\HepatitisViralAcute_2016.csv = Data\CDC\HepatitisViralAcute_2016.csv
+		Data\CDC\InvasivePneumococcalToLegionellosis_2014.csv = Data\CDC\InvasivePneumococcalToLegionellosis_2014.csv
+		Data\CDC\InvasivePneumococcalToLegionellosis_2015.csv = Data\CDC\InvasivePneumococcalToLegionellosis_2015.csv
+		Data\CDC\InvasivePneumococcalToLegionellosis_2016.csv = Data\CDC\InvasivePneumococcalToLegionellosis_2016.csv
+		Data\CDC\LymeDiseaseToMeningococcal_2014.csv = Data\CDC\LymeDiseaseToMeningococcal_2014.csv
+		Data\CDC\LymeDiseaseToMeningococcal_2015.csv = Data\CDC\LymeDiseaseToMeningococcal_2015.csv
+		Data\CDC\LymeDiseaseToMeningococcal_2016.csv = Data\CDC\LymeDiseaseToMeningococcal_2016.csv
+		Data\CDC\MumpsToRabies_2014.csv = Data\CDC\MumpsToRabies_2014.csv
+		Data\CDC\MumpsToRabies_2015.csv = Data\CDC\MumpsToRabies_2015.csv
+		Data\CDC\MumpsToRabies_2016.csv = Data\CDC\MumpsToRabies_2016.csv
+		Data\CDC\RubellaToSalmonellosis_2015.csv = Data\CDC\RubellaToSalmonellosis_2015.csv
+		Data\CDC\RubellaToSalmonellosis_2016.csv = Data\CDC\RubellaToSalmonellosis_2016.csv
+		Data\CDC\Salmonellosis_2014.csv = Data\CDC\Salmonellosis_2014.csv
+		Data\CDC\SalmonellosisToShigellosis_2014.csv = Data\CDC\SalmonellosisToShigellosis_2014.csv
+		Data\CDC\ShigaToxinToShigellosis_2014.csv = Data\CDC\ShigaToxinToShigellosis_2014.csv
+		Data\CDC\ShigaToxinToShigellosis_2015.csv = Data\CDC\ShigaToxinToShigellosis_2015.csv
+		Data\CDC\ShigaToxinToShigellosis_2016.csv = Data\CDC\ShigaToxinToShigellosis_2016.csv
+		Data\CDC\SpottedFeverRickettsiosisToSyphillis_2014.csv = Data\CDC\SpottedFeverRickettsiosisToSyphillis_2014.csv
+		Data\CDC\SpottedFeverRickettsiosisToSyphillis_2015.csv = Data\CDC\SpottedFeverRickettsiosisToSyphillis_2015.csv
+		Data\CDC\SpottedFeverRickettsiosisToSyphillis_2016.csv = Data\CDC\SpottedFeverRickettsiosisToSyphillis_2016.csv
+		Data\CDC\TetanusToVibriosis_2015.csv = Data\CDC\TetanusToVibriosis_2015.csv
+		Data\CDC\TetanusToVibriosis_2016.csv = Data\CDC\TetanusToVibriosis_2016.csv
+		Data\CDC\VaricellaToWestNileVirusDisease_2014.csv = Data\CDC\VaricellaToWestNileVirusDisease_2014.csv
+		Data\CDC\WestNileVirusDisease_2015.csv = Data\CDC\WestNileVirusDisease_2015.csv
+		Data\CDC\WestNileVirusDisease_2016.csv = Data\CDC\WestNileVirusDisease_2016.csv
 	EndProjectSection
 EndProject
 Global
@@ -48,5 +72,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B60699CF-0409-4AF3-8C04-2D29BE2AD172} = {8C2E3551-4519-4DA3-B5E2-09FD690F302E}
 	EndGlobalSection
 EndGlobal

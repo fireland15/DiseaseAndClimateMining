@@ -9,7 +9,7 @@ namespace DataImport.CsvModels.CsvMaps
             Map(m => m.Location).Name("Reporting Area");
             Map(m => m.Year).Name("MMWR Year");
             Map(m => m.Week).Name("MMWR Week");
-            Map(m => m.NewInfections).Name("Ehrlichiosis/Anaplasmosis†, Anaplasma phagocytophilum, Current week");
+            Map(m => m.NewInfections).Name("Ehrlichiosis/Anaplasmosis, Anaplasma phagocytophilum, Current week");
         }
     }
 }
