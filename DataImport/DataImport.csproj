@@ -88,11 +88,11 @@
     <Compile Include="CsvModels\CsvMaps\PertussisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\RabiesMap.cs" />
     <Compile Include="CsvModels\CsvMaps\SamonellosisMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\ShigaToxinMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\ShigellosisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\SpottedFeverRickettsiosisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\SyphilisMap.cs" />
-    <Compile Include="CsvModels\CsvMaps\TetanusMap.cs" />
     <Compile Include="CsvModels\CsvMaps\VaricellaMap.cs" />
-    <Compile Include="CsvModels\CsvMaps\VibriosisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\WestNileVirusDiseaseMap.cs" />
     <Compile Include="DiseaseImporter.cs" />
     <Compile Include="Diseases.cs" />

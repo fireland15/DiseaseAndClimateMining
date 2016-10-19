@@ -26,5 +26,10 @@
         public static string Rabies = "rabies";
         public static string Salmonellosis = "salmonellosis";
         public static string ShigaToxin = "shiga_toxin";
+        public static string Shigellosis = "shigellosis";
+        public static string SpottedFeverRickettsiosis = "spotted_fever_rickettsiosis";
+        public static string Syphilis = "syphilis";
+        public static string Varicella = "varicella";
+        public static string WestNileVirus = "west_nile_virus";
     }
 }

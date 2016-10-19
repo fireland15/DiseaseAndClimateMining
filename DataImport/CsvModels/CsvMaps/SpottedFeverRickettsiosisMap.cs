@@ -2,25 +2,14 @@
 
 namespace DataImport.CsvModels.CsvMaps
 {
-    public class SpottedFeverRickettsiosisMap2014 : CsvClassMap<CsvDiseaseRecord>
+    public class SpottedFeverRickettsiosisMap : CsvClassMap<CsvDiseaseRecord>
     {
         public override void CreateMap()
         {
             Map(m => m.Location).Name("Reporting Area");
             Map(m => m.Year).Name("MMWR Year");
             Map(m => m.Week).Name("MMWR Week");
-            Map(m => m.NewInfections).Name("Spotted Fever Rickettsiosis (including RMSF)†, Confirmed, Current week");
-        }
-    }
-
-    public class SpottedFeverRickettsiosisMap2015 : CsvClassMap<CsvDiseaseRecord>
-    {
-        public override void CreateMap()
-        {
-            Map(m => m.Location).Name("Reporting Area");
-            Map(m => m.Year).Name("MMWR Year");
-            Map(m => m.Week).Name("MMWR Week");
-            Map(m => m.NewInfections).Name("Spotted Fever Rickettsiosis (including RMSF)§, Confirmed, Current week");
+            Map(m => m.NewInfections).Name("Spotted Fever Rickettsiosis (including RMSF), Confirmed, Current week");
         }
     }
 }
