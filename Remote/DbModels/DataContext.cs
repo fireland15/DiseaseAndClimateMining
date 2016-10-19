@@ -8,5 +8,6 @@ namespace Remote.DbModels
         public DataContext(string connectionString) : base(connectionString) { }
 
         virtual public DbSet<DiseaseRecord> DiseaseRecords { get; set; }
+        virtual public DbSet<Location> Locations { get; set; }
     }
 }

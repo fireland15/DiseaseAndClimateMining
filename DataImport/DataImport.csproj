@@ -96,6 +96,7 @@
     <Compile Include="CsvModels\CsvMaps\WestNileVirusDiseaseMap.cs" />
     <Compile Include="DiseaseImporter.cs" />
     <Compile Include="Diseases.cs" />
+    <Compile Include="LocationImporter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

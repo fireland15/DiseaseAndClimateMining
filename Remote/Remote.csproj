@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="DbModels\DataContext.cs" />
     <Compile Include="DbModels\DiseaseRecord.cs" />
+    <Compile Include="DbModels\Location.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
