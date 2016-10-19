@@ -53,7 +53,7 @@ namespace DataImport
 
                 var count = _db.DiseaseRecords.Count();
                 _db.DiseaseRecords.AddRange(records.Select(x => ConvertToDiseaseRecord(disease, x)));
-                _db.SaveChangesAsync();
+                _db.SaveChanges();
                 newRecordsCount = _db.DiseaseRecords.Count() - count;
             }
 

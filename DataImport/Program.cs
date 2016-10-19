@@ -77,7 +77,7 @@ namespace DataImport
             float timeToImport = watch.Elapsed.Seconds;
             int recordsImported;
 
-            using (DataContext context = new DataContext())
+            using (DataContext context = new DataContext("DataMiningProjectDb"))
             {
                  recordsImported = context.DiseaseRecords.Count();
             }
@@ -89,11 +89,17 @@ namespace DataImport
         {
             if (File.Exists("DiseaseAndClimateDb.sdf"))
                 File.Delete("DiseaseAndClimateDb.sdf");
+
+            using (DataContext context = new DataContext("DataMiningProjectDb"))
+            {
+                context.Database.ExecuteSqlCommand("TRUNCATE TABLE [dbo].[DiseaseRecords]");
+                context.SaveChanges();
+            }
         }
 
         private static void StartImportProcess()
         {
-            using (DataContext context = new DataContext())
+            using (DataContext context = new DataContext("DataMiningProjectDb"))
             {
                 DiseaseImporter importer = new DiseaseImporter(context);
 
