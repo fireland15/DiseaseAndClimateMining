@@ -12,7 +12,7 @@ namespace Remote.DbModels
         public string DiseaseName { get; set; }
         
         [Required]
-        public string Location { get; set; }
+        public int LocationId { get; set; }
         
         [Required]
         public string Year { get; set; }
@@ -22,5 +22,8 @@ namespace Remote.DbModels
 
         [Required]
         public int NewInfections { get; set; }
+
+        [ForeignKey(nameof(LocationId))]
+        public virtual Location Location { get; set; }
     }
 }

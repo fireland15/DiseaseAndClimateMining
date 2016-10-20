@@ -16,6 +16,7 @@ namespace DataImport
     {
         private DataContext _db;
         private Stopwatch _timer;
+        private List<Location> _states;
 
         public DiseaseImporter(DataContext db)
         {
@@ -23,6 +24,8 @@ namespace DataImport
                 throw new ArgumentNullException(nameof(db), "The db must not be null");
 
             _db = db;
+
+            _states = _db.Locations.ToList();// caches locations in the class so that there are fewer db calls. Makes importing faster.
 
             _timer = new Stopwatch();
         }
@@ -172,8 +175,12 @@ namespace DataImport
                 IEnumerable<CsvDiseaseRecord> records = csvRdr.GetRecords<CsvDiseaseRecord>();
 
                 var count = _db.DiseaseRecords.Count();
-                _db.DiseaseRecords.AddRange(records.Select(x => ConvertToDiseaseRecord(disease, x)));
+
+                _db.DiseaseRecords
+                    .AddRange(records.Where(x => _states.Any(y => y.Name.Equals(x.Location, StringComparison.CurrentCultureIgnoreCase)))
+                                     .Select(x => ConvertToDiseaseRecord(disease, x)));
                 _db.SaveChanges();
+
                 newRecordsCount = _db.DiseaseRecords.Count() - count;
             }
 
@@ -183,12 +190,12 @@ namespace DataImport
             _timer.Reset();
         }
 
-        private static DiseaseRecord ConvertToDiseaseRecord(string disease, CsvDiseaseRecord record)
+        private DiseaseRecord ConvertToDiseaseRecord(string disease, CsvDiseaseRecord record)
         {
             return new DiseaseRecord
             {
                 DiseaseName = disease,
-                Location = record.Location,
+                Location = _states.Single(x => x.Name.Equals(record.Location, StringComparison.CurrentCultureIgnoreCase)),
                 Year = record.Year,
                 Week = Convert.ToInt32(record.Week != string.Empty ? record.Week : "0"),
                 NewInfections = Convert.ToInt32(record.NewInfections != string.Empty ? record.NewInfections : "0")

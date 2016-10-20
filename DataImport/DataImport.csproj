@@ -93,12 +93,15 @@
     <Compile Include="CsvModels\CsvMaps\SpottedFeverRickettsiosisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\SyphilisMap.cs" />
     <Compile Include="CsvModels\CsvMaps\VaricellaMap.cs" />
+    <Compile Include="CsvModels\CsvMaps\WeatherStationMap.cs" />
     <Compile Include="CsvModels\CsvMaps\WestNileVirusDiseaseMap.cs" />
+    <Compile Include="CsvModels\CsvWeatherRecord.cs" />
     <Compile Include="DiseaseImporter.cs" />
     <Compile Include="Diseases.cs" />
     <Compile Include="LocationImporter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeatherImporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

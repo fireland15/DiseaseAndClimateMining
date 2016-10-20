@@ -55,6 +55,58 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CDC", "CDC", "{B60699CF-040
 		Data\CDC\WestNileVirusDisease_2016.csv = Data\CDC\WestNileVirusDisease_2016.csv
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NOAA", "NOAA", "{4D9E4B4C-D614-4A1A-9B0D-7906FA40F75B}"
+	ProjectSection(SolutionItems) = preProject
+		Data\NOAA\AL.csv = Data\NOAA\AL.csv
+		Data\NOAA\AR.csv = Data\NOAA\AR.csv
+		Data\NOAA\AZ.csv = Data\NOAA\AZ.csv
+		Data\NOAA\CA.csv = Data\NOAA\CA.csv
+		Data\NOAA\CO.csv = Data\NOAA\CO.csv
+		Data\NOAA\CT.csv = Data\NOAA\CT.csv
+		Data\NOAA\DE.csv = Data\NOAA\DE.csv
+		Data\NOAA\FL.csv = Data\NOAA\FL.csv
+		Data\NOAA\GA.csv = Data\NOAA\GA.csv
+		Data\NOAA\IA.csv = Data\NOAA\IA.csv
+		Data\NOAA\ID.csv = Data\NOAA\ID.csv
+		Data\NOAA\IL.csv = Data\NOAA\IL.csv
+		Data\NOAA\IN.csv = Data\NOAA\IN.csv
+		Data\NOAA\KS.csv = Data\NOAA\KS.csv
+		Data\NOAA\KY.csv = Data\NOAA\KY.csv
+		Data\NOAA\LA.csv = Data\NOAA\LA.csv
+		Data\NOAA\MA.csv = Data\NOAA\MA.csv
+		Data\NOAA\MD.csv = Data\NOAA\MD.csv
+		Data\NOAA\ME.csv = Data\NOAA\ME.csv
+		Data\NOAA\MI.csv = Data\NOAA\MI.csv
+		Data\NOAA\MN.csv = Data\NOAA\MN.csv
+		Data\NOAA\MO.csv = Data\NOAA\MO.csv
+		Data\NOAA\MS.csv = Data\NOAA\MS.csv
+		Data\NOAA\MT.csv = Data\NOAA\MT.csv
+		Data\NOAA\NC.csv = Data\NOAA\NC.csv
+		Data\NOAA\ND.csv = Data\NOAA\ND.csv
+		Data\NOAA\NE.csv = Data\NOAA\NE.csv
+		Data\NOAA\NH.csv = Data\NOAA\NH.csv
+		Data\NOAA\NJ.csv = Data\NOAA\NJ.csv
+		Data\NOAA\NM.csv = Data\NOAA\NM.csv
+		Data\NOAA\NV.csv = Data\NOAA\NV.csv
+		Data\NOAA\NY.csv = Data\NOAA\NY.csv
+		Data\NOAA\OH.csv = Data\NOAA\OH.csv
+		Data\NOAA\OK.csv = Data\NOAA\OK.csv
+		Data\NOAA\OR.csv = Data\NOAA\OR.csv
+		Data\NOAA\PA.csv = Data\NOAA\PA.csv
+		Data\NOAA\RI.csv = Data\NOAA\RI.csv
+		Data\NOAA\SC.csv = Data\NOAA\SC.csv
+		Data\NOAA\SD.csv = Data\NOAA\SD.csv
+		Data\NOAA\TN.csv = Data\NOAA\TN.csv
+		Data\NOAA\TX.csv = Data\NOAA\TX.csv
+		Data\NOAA\UT.csv = Data\NOAA\UT.csv
+		Data\NOAA\VA.csv = Data\NOAA\VA.csv
+		Data\NOAA\VT.csv = Data\NOAA\VT.csv
+		Data\NOAA\WA.csv = Data\NOAA\WA.csv
+		Data\NOAA\WI.csv = Data\NOAA\WI.csv
+		Data\NOAA\WV.csv = Data\NOAA\WV.csv
+		Data\NOAA\WY.csv = Data\NOAA\WY.csv
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,5 +127,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B60699CF-0409-4AF3-8C04-2D29BE2AD172} = {8C2E3551-4519-4DA3-B5E2-09FD690F302E}
+		{4D9E4B4C-D614-4A1A-9B0D-7906FA40F75B} = {8C2E3551-4519-4DA3-B5E2-09FD690F302E}
 	EndGlobalSection
 EndGlobal

@@ -1,9 +1,7 @@
-﻿using DataImport.CsvModels.CsvMaps;
-using Remote.DbModels;
+﻿using Remote.DbModels;
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 
 namespace DataImport
 {
@@ -19,7 +17,7 @@ namespace DataImport
 
             watch.Stop();
 
-            float timeToImport = watch.Elapsed.Seconds;
+            double timeToImport = watch.Elapsed.TotalSeconds;
 
             Console.WriteLine($"Importing finished in {timeToImport} seconds");
         }
@@ -31,8 +29,9 @@ namespace DataImport
 
             using (DataContext context = new DataContext("DataMiningProjectDb"))
             {
-                context.Database.ExecuteSqlCommand("TRUNCATE TABLE [dbo].[DiseaseRecords]");
-                context.Database.ExecuteSqlCommand("TRUNCATE TABLE [dbo].[Locations]");
+                context.Database.CommandTimeout = 3000;
+                context.Database.ExecuteSqlCommand("DELETE FROM [dbo].[DiseaseRecords]");
+                context.Database.ExecuteSqlCommand("DELETE FROM [dbo].[Locations]");
                 context.SaveChanges();
             }
         }
@@ -41,6 +40,7 @@ namespace DataImport
         {
             using (DataContext context = new DataContext("DataMiningProjectDb"))
             {
+
                 Console.WriteLine("Importing Locations");
                 LocationImporter locationImporter = new LocationImporter(context);
                 locationImporter.ImportStates();
@@ -48,6 +48,10 @@ namespace DataImport
                 Console.WriteLine("Importing Diseases");
                 DiseaseImporter diseaseImporter = new DiseaseImporter(context);
                 diseaseImporter.ImportAllDiseases();
+
+                Console.WriteLine("Importing Weather");
+                WeatherImporter weatherImporter = new WeatherImporter(context);
+                weatherImporter.ImportAllWeather();
             }
         }
     }
