@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace DataImport
 {
@@ -30,123 +29,123 @@ namespace DataImport
             _timer = new Stopwatch();
         }
 
-        public void ImportAllDiseases()
+        public void ImportAllDiseases(string dataDirectory)
         {
-            Import<BabesiosisMap>(Diseases.Babesiosis, Files[0]);
-            Import<BabesiosisMap>(Diseases.Babesiosis, Files[1]);
-            Import<BabesiosisMap>(Diseases.Babesiosis, Files[2]);
+            Import<BabesiosisMap>(Diseases.Babesiosis, dataDirectory + Files[0]);
+            Import<BabesiosisMap>(Diseases.Babesiosis, dataDirectory + Files[1]);
+            Import<BabesiosisMap>(Diseases.Babesiosis, dataDirectory + Files[2]);
 
-            Import<ChlamydiaMap>(Diseases.Chlamydia, Files[3]);
-            Import<ChlamydiaMap>(Diseases.Chlamydia, Files[4]);
-            Import<ChlamydiaMap>(Diseases.Chlamydia, Files[5]);
+            Import<ChlamydiaMap>(Diseases.Chlamydia, dataDirectory + Files[3]);
+            Import<ChlamydiaMap>(Diseases.Chlamydia, dataDirectory + Files[4]);
+            Import<ChlamydiaMap>(Diseases.Chlamydia, dataDirectory + Files[5]);
 
-            Import<CoccidioidomycosisMap>(Diseases.Coccidioidomycosis, Files[3]);
-            Import<CoccidioidomycosisMap>(Diseases.Coccidioidomycosis, Files[4]);
-            Import<CoccidioidomycosisMap>(Diseases.Coccidioidomycosis, Files[5]);
+            Import<CoccidioidomycosisMap>(Diseases.Coccidioidomycosis, dataDirectory + Files[3]);
+            Import<CoccidioidomycosisMap>(Diseases.Coccidioidomycosis, dataDirectory + Files[4]);
+            Import<CoccidioidomycosisMap>(Diseases.Coccidioidomycosis, dataDirectory + Files[5]);
 
-            Import<CryptosporidiosisMap>(Diseases.Cryptosporidiosis, Files[6]);
-            Import<CryptosporidiosisMap>(Diseases.Cryptosporidiosis, Files[7]);
-            Import<CryptosporidiosisMap>(Diseases.Cryptosporidiosis, Files[8]);
+            Import<CryptosporidiosisMap>(Diseases.Cryptosporidiosis, dataDirectory + Files[6]);
+            Import<CryptosporidiosisMap>(Diseases.Cryptosporidiosis, dataDirectory + Files[7]);
+            Import<CryptosporidiosisMap>(Diseases.Cryptosporidiosis, dataDirectory + Files[8]);
 
-            Import<DengueFeverMap>(Diseases.DengueFever, Files[6]);
-            Import<DengueFeverMap>(Diseases.DengueFever, Files[7]);
-            Import<DengueFeverMap>(Diseases.DengueFever, Files[8]);
+            Import<DengueFeverMap>(Diseases.DengueFever, dataDirectory + Files[6]);
+            Import<DengueFeverMap>(Diseases.DengueFever, dataDirectory + Files[7]);
+            Import<DengueFeverMap>(Diseases.DengueFever, dataDirectory + Files[8]);
 
-            Import<DengueHemorrhagicFeverMap>(Diseases.DengueHemorrhagicFever, Files[6]);
-            Import<DengueHemorrhagicFeverMap>(Diseases.DengueHemorrhagicFever, Files[7]);
-            Import<DengueHemorrhagicFeverMap>(Diseases.DengueHemorrhagicFever, Files[8]);
+            Import<DengueHemorrhagicFeverMap>(Diseases.DengueHemorrhagicFever, dataDirectory + Files[6]);
+            Import<DengueHemorrhagicFeverMap>(Diseases.DengueHemorrhagicFever, dataDirectory + Files[7]);
+            Import<DengueHemorrhagicFeverMap>(Diseases.DengueHemorrhagicFever, dataDirectory + Files[8]);
 
-            Import<EhrlichiosisMap>(Diseases.Ehrlichiosis, Files[9]);
-            Import<EhrlichiosisMap>(Diseases.Ehrlichiosis, Files[10]);
-            Import<EhrlichiosisMap>(Diseases.Ehrlichiosis, Files[11]);
+            Import<EhrlichiosisMap>(Diseases.Ehrlichiosis, dataDirectory + Files[9]);
+            Import<EhrlichiosisMap>(Diseases.Ehrlichiosis, dataDirectory + Files[10]);
+            Import<EhrlichiosisMap>(Diseases.Ehrlichiosis, dataDirectory + Files[11]);
 
-            Import<AnaplasmosisMap>(Diseases.Anaplasmosis, Files[9]);
-            Import<AnaplasmosisMap>(Diseases.Anaplasmosis, Files[10]);
-            Import<AnaplasmosisMap>(Diseases.Anaplasmosis, Files[11]);
+            Import<AnaplasmosisMap>(Diseases.Anaplasmosis, dataDirectory + Files[9]);
+            Import<AnaplasmosisMap>(Diseases.Anaplasmosis, dataDirectory + Files[10]);
+            Import<AnaplasmosisMap>(Diseases.Anaplasmosis, dataDirectory + Files[11]);
 
-            Import<GiardiasisMap>(Diseases.Giardiasis, Files[12]);
-            Import<GiardiasisMap>(Diseases.Giardiasis, Files[13]);
-            Import<GiardiasisMap>(Diseases.Giardiasis, Files[14]);
+            Import<GiardiasisMap>(Diseases.Giardiasis, dataDirectory + Files[12]);
+            Import<GiardiasisMap>(Diseases.Giardiasis, dataDirectory + Files[13]);
+            Import<GiardiasisMap>(Diseases.Giardiasis, dataDirectory + Files[14]);
 
-            Import<GonorrheaMap>(Diseases.Gonorrhea, Files[12]);
-            Import<GonorrheaMap>(Diseases.Gonorrhea, Files[13]);
-            Import<GonorrheaMap>(Diseases.Gonorrhea, Files[14]);
+            Import<GonorrheaMap>(Diseases.Gonorrhea, dataDirectory + Files[12]);
+            Import<GonorrheaMap>(Diseases.Gonorrhea, dataDirectory + Files[13]);
+            Import<GonorrheaMap>(Diseases.Gonorrhea, dataDirectory + Files[14]);
 
-            Import<HaemophilusInfluenzaMap>(Diseases.HaemophilusInfluenza, Files[12]);
-            Import<HaemophilusInfluenzaMap>(Diseases.HaemophilusInfluenza, Files[13]);
-            Import<HaemophilusInfluenzaMap>(Diseases.HaemophilusInfluenza, Files[14]);
+            Import<HaemophilusInfluenzaMap>(Diseases.HaemophilusInfluenza, dataDirectory + Files[12]);
+            Import<HaemophilusInfluenzaMap>(Diseases.HaemophilusInfluenza, dataDirectory + Files[13]);
+            Import<HaemophilusInfluenzaMap>(Diseases.HaemophilusInfluenza, dataDirectory + Files[14]);
 
-            Import<HepatitisAMap>(Diseases.HepatitisA, Files[15]);
-            Import<HepatitisAMap>(Diseases.HepatitisA, Files[16]);
-            Import<HepatitisAMap>(Diseases.HepatitisA, Files[17]);
+            Import<HepatitisAMap>(Diseases.HepatitisA, dataDirectory + Files[15]);
+            Import<HepatitisAMap>(Diseases.HepatitisA, dataDirectory + Files[16]);
+            Import<HepatitisAMap>(Diseases.HepatitisA, dataDirectory + Files[17]);
 
-            Import<HepatitisBMap>(Diseases.HepatitisB, Files[15]);
-            Import<HepatitisBMap>(Diseases.HepatitisB, Files[16]);
-            Import<HepatitisBMap>(Diseases.HepatitisB, Files[17]);
+            Import<HepatitisBMap>(Diseases.HepatitisB, dataDirectory + Files[15]);
+            Import<HepatitisBMap>(Diseases.HepatitisB, dataDirectory + Files[16]);
+            Import<HepatitisBMap>(Diseases.HepatitisB, dataDirectory + Files[17]);
 
-            Import<HepatitisCMap>(Diseases.HepatitisC, Files[15]);
-            Import<HepatitisCMap>(Diseases.HepatitisC, Files[16]);
-            Import<HepatitisCMap>(Diseases.HepatitisC, Files[17]);
+            Import<HepatitisCMap>(Diseases.HepatitisC, dataDirectory + Files[15]);
+            Import<HepatitisCMap>(Diseases.HepatitisC, dataDirectory + Files[16]);
+            Import<HepatitisCMap>(Diseases.HepatitisC, dataDirectory + Files[17]);
 
-            Import<InvasivePneumococcalMap>(Diseases.InvasivePneumococcal, Files[18]);
-            Import<InvasivePneumococcalMap>(Diseases.InvasivePneumococcal, Files[19]);
-            Import<InvasivePneumococcalMap>(Diseases.InvasivePneumococcal, Files[20]);
+            Import<InvasivePneumococcalMap>(Diseases.InvasivePneumococcal, dataDirectory + Files[18]);
+            Import<InvasivePneumococcalMap>(Diseases.InvasivePneumococcal, dataDirectory + Files[19]);
+            Import<InvasivePneumococcalMap>(Diseases.InvasivePneumococcal, dataDirectory + Files[20]);
 
-            Import<LegionellosisMap>(Diseases.Legionellosis, Files[18]);
-            Import<LegionellosisMap>(Diseases.Legionellosis, Files[19]);
-            Import<LegionellosisMap>(Diseases.Legionellosis, Files[20]);
+            Import<LegionellosisMap>(Diseases.Legionellosis, dataDirectory + Files[18]);
+            Import<LegionellosisMap>(Diseases.Legionellosis, dataDirectory + Files[19]);
+            Import<LegionellosisMap>(Diseases.Legionellosis, dataDirectory + Files[20]);
 
-            Import<LymeDiseaseMap>(Diseases.LymeDisease, Files[21]);
-            Import<LymeDiseaseMap>(Diseases.LymeDisease, Files[22]);
-            Import<LymeDiseaseMap>(Diseases.LymeDisease, Files[23]);
+            Import<LymeDiseaseMap>(Diseases.LymeDisease, dataDirectory + Files[21]);
+            Import<LymeDiseaseMap>(Diseases.LymeDisease, dataDirectory + Files[22]);
+            Import<LymeDiseaseMap>(Diseases.LymeDisease, dataDirectory + Files[23]);
 
-            Import<MalariaMap>(Diseases.Malaria, Files[21]);
-            Import<MalariaMap>(Diseases.Malaria, Files[22]);
-            Import<MalariaMap>(Diseases.Malaria, Files[23]);
+            Import<MalariaMap>(Diseases.Malaria, dataDirectory + Files[21]);
+            Import<MalariaMap>(Diseases.Malaria, dataDirectory + Files[22]);
+            Import<MalariaMap>(Diseases.Malaria, dataDirectory + Files[23]);
 
-            Import<MeningococcalMap>(Diseases.Meningococcal, Files[21]);
-            Import<MeningococcalMap>(Diseases.Meningococcal, Files[22]);
-            Import<MeningococcalMap>(Diseases.Meningococcal, Files[23]);
+            Import<MeningococcalMap>(Diseases.Meningococcal, dataDirectory + Files[21]);
+            Import<MeningococcalMap>(Diseases.Meningococcal, dataDirectory + Files[22]);
+            Import<MeningococcalMap>(Diseases.Meningococcal, dataDirectory + Files[23]);
 
-            Import<MumpsMap>(Diseases.Mumps, Files[24]);
-            Import<MumpsMap>(Diseases.Mumps, Files[25]);
-            Import<MumpsMap>(Diseases.Mumps, Files[26]);
+            Import<MumpsMap>(Diseases.Mumps, dataDirectory + Files[24]);
+            Import<MumpsMap>(Diseases.Mumps, dataDirectory + Files[25]);
+            Import<MumpsMap>(Diseases.Mumps, dataDirectory + Files[26]);
 
-            Import<PertussisMap>(Diseases.Pertussis, Files[24]);
-            Import<PertussisMap>(Diseases.Pertussis, Files[25]);
-            Import<PertussisMap>(Diseases.Pertussis, Files[26]);
+            Import<PertussisMap>(Diseases.Pertussis, dataDirectory + Files[24]);
+            Import<PertussisMap>(Diseases.Pertussis, dataDirectory + Files[25]);
+            Import<PertussisMap>(Diseases.Pertussis, dataDirectory + Files[26]);
 
-            Import<RabiesMap>(Diseases.Rabies, Files[24]);
-            Import<RabiesMap>(Diseases.Rabies, Files[25]);
-            Import<RabiesMap>(Diseases.Rabies, Files[26]);
+            Import<RabiesMap>(Diseases.Rabies, dataDirectory + Files[24]);
+            Import<RabiesMap>(Diseases.Rabies, dataDirectory + Files[25]);
+            Import<RabiesMap>(Diseases.Rabies, dataDirectory + Files[26]);
 
-            Import<SamonellosisMap>(Diseases.Salmonellosis, Files[27]);
-            Import<SamonellosisMap>(Diseases.Salmonellosis, Files[28]);
-            Import<SamonellosisMap>(Diseases.Salmonellosis, Files[29]);
+            Import<SamonellosisMap>(Diseases.Salmonellosis, dataDirectory + Files[27]);
+            Import<SamonellosisMap>(Diseases.Salmonellosis, dataDirectory + Files[28]);
+            Import<SamonellosisMap>(Diseases.Salmonellosis, dataDirectory + Files[29]);
 
-            Import<ShigaToxinMap>(Diseases.ShigaToxin, Files[30]);
-            Import<ShigaToxinMap>(Diseases.ShigaToxin, Files[31]);
-            Import<ShigaToxinMap>(Diseases.ShigaToxin, Files[32]);
+            Import<ShigaToxinMap>(Diseases.ShigaToxin, dataDirectory + Files[30]);
+            Import<ShigaToxinMap>(Diseases.ShigaToxin, dataDirectory + Files[31]);
+            Import<ShigaToxinMap>(Diseases.ShigaToxin, dataDirectory + Files[32]);
 
-            Import<ShigellosisMap>(Diseases.Shigellosis, Files[30]);
-            Import<ShigellosisMap>(Diseases.Shigellosis, Files[31]);
-            Import<ShigellosisMap>(Diseases.Shigellosis, Files[32]);
+            Import<ShigellosisMap>(Diseases.Shigellosis, dataDirectory + Files[30]);
+            Import<ShigellosisMap>(Diseases.Shigellosis, dataDirectory + Files[31]);
+            Import<ShigellosisMap>(Diseases.Shigellosis, dataDirectory + Files[32]);
 
-            Import<SpottedFeverRickettsiosisMap>(Diseases.SpottedFeverRickettsiosis, Files[33]);
-            Import<SpottedFeverRickettsiosisMap>(Diseases.SpottedFeverRickettsiosis, Files[34]);
-            Import<SpottedFeverRickettsiosisMap>(Diseases.SpottedFeverRickettsiosis, Files[35]);
+            Import<SpottedFeverRickettsiosisMap>(Diseases.SpottedFeverRickettsiosis, dataDirectory + Files[33]);
+            Import<SpottedFeverRickettsiosisMap>(Diseases.SpottedFeverRickettsiosis, dataDirectory + Files[34]);
+            Import<SpottedFeverRickettsiosisMap>(Diseases.SpottedFeverRickettsiosis, dataDirectory + Files[35]);
 
-            Import<SyphilisMap>(Diseases.Syphilis, Files[33]);
-            Import<SyphilisMap>(Diseases.Syphilis, Files[34]);
-            Import<SyphilisMap>(Diseases.Syphilis, Files[35]);
+            Import<SyphilisMap>(Diseases.Syphilis, dataDirectory + Files[33]);
+            Import<SyphilisMap>(Diseases.Syphilis, dataDirectory + Files[34]);
+            Import<SyphilisMap>(Diseases.Syphilis, dataDirectory + Files[35]);
 
-            Import<VaricellaMap>(Diseases.Varicella, Files[36]);
-            Import<VaricellaMap>(Diseases.Varicella, Files[37]);
-            Import<VaricellaMap>(Diseases.Varicella, Files[38]);
+            Import<VaricellaMap>(Diseases.Varicella, dataDirectory + Files[36]);
+            Import<VaricellaMap>(Diseases.Varicella, dataDirectory + Files[37]);
+            Import<VaricellaMap>(Diseases.Varicella, dataDirectory + Files[38]);
 
-            Import<WestNileVirusDiseaseMap>(Diseases.WestNileVirus, Files[36]);
-            Import<WestNileVirusDiseaseMap>(Diseases.WestNileVirus, Files[39]);
-            Import<WestNileVirusDiseaseMap>(Diseases.WestNileVirus, Files[40]);
+            Import<WestNileVirusDiseaseMap>(Diseases.WestNileVirus, dataDirectory + Files[36]);
+            Import<WestNileVirusDiseaseMap>(Diseases.WestNileVirus, dataDirectory + Files[39]);
+            Import<WestNileVirusDiseaseMap>(Diseases.WestNileVirus, dataDirectory + Files[40]);
         }
 
         /// <summary>
@@ -204,60 +203,60 @@ namespace DataImport
 
         private static string[] Files =
         {
-            "../../../Data/CDC/Babesiosis_2014.csv",
-            "../../../Data/CDC/BabesiosisToCampylobacteriosis_2015.csv",
-            "../../../Data/CDC/BabesiosisToCampylobacteriosis_2016.csv",
+            "/CDC/Babesiosis_2014.csv",
+            "/CDC/BabesiosisToCampylobacteriosis_2015.csv",
+            "/CDC/BabesiosisToCampylobacteriosis_2016.csv",
 
-            "../../../Data/CDC/ChlamydiaToCoccidioidomycosis_2014.csv",
-            "../../../Data/CDC/ChlamydiaToCoccidioidomycosis_2015.csv",
-            "../../../Data/CDC/ChlamydiaToCoccidioidomycosis_2016.csv",
+            "/CDC/ChlamydiaToCoccidioidomycosis_2014.csv",
+            "/CDC/ChlamydiaToCoccidioidomycosis_2015.csv",
+            "/CDC/ChlamydiaToCoccidioidomycosis_2016.csv",
 
-            "../../../Data/CDC/CryptosporidiosisToDengue_2014.csv",
-            "../../../Data/CDC/CryptosporidiosisToDengue_2015.csv",
-            "../../../Data/CDC/CryptosporidiosisToDengue_2016.csv",
+            "/CDC/CryptosporidiosisToDengue_2014.csv",
+            "/CDC/CryptosporidiosisToDengue_2015.csv",
+            "/CDC/CryptosporidiosisToDengue_2016.csv",
 
-            "../../../Data/CDC/EhrlichiosisAnaplasmosisDisease_2014.csv",
-            "../../../Data/CDC/EhrlichiosisAnaplasmosisDisease_2015.csv",
-            "../../../Data/CDC/EhrlichiosisAnaplasmosisDisease_2016.csv",
+            "/CDC/EhrlichiosisAnaplasmosisDisease_2014.csv",
+            "/CDC/EhrlichiosisAnaplasmosisDisease_2015.csv",
+            "/CDC/EhrlichiosisAnaplasmosisDisease_2016.csv",
 
-            "../../../Data/CDC/GiardiasisToHaemophilusInfluenza_2014.csv",
-            "../../../Data/CDC/GiardiasisToHaemophilusInfluenza_2015.csv",
-            "../../../Data/CDC/GiardiasisToHaemophilusInfluenza_2016.csv",
+            "/CDC/GiardiasisToHaemophilusInfluenza_2014.csv",
+            "/CDC/GiardiasisToHaemophilusInfluenza_2015.csv",
+            "/CDC/GiardiasisToHaemophilusInfluenza_2016.csv",
 
-            "../../../Data/CDC/HepatitisViralAcute_2014.csv",
-            "../../../Data/CDC/HepatitisViralAcute_2015.csv",
-            "../../../Data/CDC/HepatitisViralAcute_2016.csv",
+            "/CDC/HepatitisViralAcute_2014.csv",
+            "/CDC/HepatitisViralAcute_2015.csv",
+            "/CDC/HepatitisViralAcute_2016.csv",
 
-            "../../../Data/CDC/InvasivePneumococcalToLegionellosis_2014.csv",
-            "../../../Data/CDC/InvasivePneumococcalToLegionellosis_2015.csv",
-            "../../../Data/CDC/InvasivePneumococcalToLegionellosis_2016.csv",
+            "/CDC/InvasivePneumococcalToLegionellosis_2014.csv",
+            "/CDC/InvasivePneumococcalToLegionellosis_2015.csv",
+            "/CDC/InvasivePneumococcalToLegionellosis_2016.csv",
 
-            "../../../Data/CDC/LymeDiseaseToMeningococcal_2014.csv",
-            "../../../Data/CDC/LymeDiseaseToMeningococcal_2015.csv",
-            "../../../Data/CDC/LymeDiseaseToMeningococcal_2016.csv",
+            "/CDC/LymeDiseaseToMeningococcal_2014.csv",
+            "/CDC/LymeDiseaseToMeningococcal_2015.csv",
+            "/CDC/LymeDiseaseToMeningococcal_2016.csv",
 
-            "../../../Data/CDC/MumpsToRabies_2014.csv",
-            "../../../Data/CDC/MumpsToRabies_2015.csv",
-            "../../../Data/CDC/MumpsToRabies_2016.csv",
+            "/CDC/MumpsToRabies_2014.csv",
+            "/CDC/MumpsToRabies_2015.csv",
+            "/CDC/MumpsToRabies_2016.csv",
 
-            "../../../Data/CDC/Salmonellosis_2014.csv",
-            "../../../Data/CDC/RubellaToSalmonellosis_2015.csv",
-            "../../../Data/CDC/RubellaToSalmonellosis_2016.csv",
+            "/CDC/Salmonellosis_2014.csv",
+            "/CDC/RubellaToSalmonellosis_2015.csv",
+            "/CDC/RubellaToSalmonellosis_2016.csv",
 
-            "../../../Data/CDC/ShigaToxinToShigellosis_2014.csv",
-            "../../../Data/CDC/ShigaToxinToShigellosis_2015.csv",
-            "../../../Data/CDC/ShigaToxinToShigellosis_2016.csv",
+            "/CDC/ShigaToxinToShigellosis_2014.csv",
+            "/CDC/ShigaToxinToShigellosis_2015.csv",
+            "/CDC/ShigaToxinToShigellosis_2016.csv",
 
-            "../../../Data/CDC/SpottedFeverRickettsiosisToSyphillis_2014.csv",
-            "../../../Data/CDC/SpottedFeverRickettsiosisToSyphillis_2015.csv",
-            "../../../Data/CDC/SpottedFeverRickettsiosisToSyphillis_2016.csv",
+            "/CDC/SpottedFeverRickettsiosisToSyphillis_2014.csv",
+            "/CDC/SpottedFeverRickettsiosisToSyphillis_2015.csv",
+            "/CDC/SpottedFeverRickettsiosisToSyphillis_2016.csv",
 
-            "../../../Data/CDC/VaricellaToWestNileVirusDisease_2014.csv",
-            "../../../Data/CDC/TetanusToVibriosis_2015.csv",
-            "../../../Data/CDC/TetanusToVibriosis_2016.csv",
+            "/CDC/VaricellaToWestNileVirusDisease_2014.csv",
+            "/CDC/TetanusToVibriosis_2015.csv",
+            "/CDC/TetanusToVibriosis_2016.csv",
 
-            "../../../Data/CDC/WestNileVirusDisease_2015.csv",
-            "../../../Data/CDC/WestNileVirusDisease_2016.csv"
+            "/CDC/WestNileVirusDisease_2015.csv",
+            "/CDC/WestNileVirusDisease_2016.csv"
         };
     }
 }

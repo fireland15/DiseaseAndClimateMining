@@ -13,7 +13,7 @@ namespace DataImport
             Stopwatch watch = new Stopwatch();
             watch.Start();
 
-            StartImportProcess();
+            StartImportProcess(args[0]);
 
             watch.Stop();
 
@@ -36,7 +36,7 @@ namespace DataImport
             }
         }
 
-        private static void StartImportProcess()
+        private static void StartImportProcess(string dataDirectory)
         {
             using (DataContext context = new DataContext("DataMiningProjectDb"))
             {
@@ -47,11 +47,11 @@ namespace DataImport
 
                 Console.WriteLine("Importing Diseases");
                 DiseaseImporter diseaseImporter = new DiseaseImporter(context);
-                diseaseImporter.ImportAllDiseases();
+                diseaseImporter.ImportAllDiseases(dataDirectory);
 
                 Console.WriteLine("Importing Weather");
                 WeatherImporter weatherImporter = new WeatherImporter(context);
-                weatherImporter.ImportAllWeather();
+                weatherImporter.ImportAllWeather(dataDirectory);
             }
         }
     }
