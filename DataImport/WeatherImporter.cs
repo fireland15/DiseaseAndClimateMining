@@ -92,7 +92,7 @@ namespace DataImport
 
             _timer.Start();
             var newRecordsCount = 0;
-
+            using (DataContext db = new DataContext("DataMiningProjectDb"))
             using (TextReader txtRdr = File.OpenText(filename))
             {
                 CsvReader csvRdr = new CsvReader(txtRdr);
@@ -101,8 +101,8 @@ namespace DataImport
 
                 var count = _context.WeatherRecords.Count();
 
-                _context.WeatherRecords.AddRange(records.Select(r => ConvertToWeatherRecord(state, r)));
-                _context.SaveChanges();
+                db.WeatherRecords.AddRange(records.Select(r => ConvertToWeatherRecord(state, r)));
+                db.SaveChanges();
 
                 newRecordsCount = _context.WeatherRecords.Count() - count;
             }
