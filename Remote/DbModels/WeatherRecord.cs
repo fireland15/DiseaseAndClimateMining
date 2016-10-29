@@ -13,7 +13,11 @@ namespace Remote.DbModels
         public int LocationId { get; set; }
 
         [Required]
+        [NotMapped]
         public DateTime Date { get; set; }
+
+        [Required]
+        public int Week { get; set; }
 
         [Required]
         public float MeanTemperature { get; set; }

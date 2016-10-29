@@ -5,6 +5,7 @@ using Remote.DbModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -101,6 +102,10 @@ namespace DataImport
 
                 var count = _context.WeatherRecords.Count();
 
+                IEnumerable<WeatherRecord> dailyRecords = records.Select(r => ConvertToWeatherRecord(state, r));
+
+                IEnumerable<WeatherRecord> weeklyRecords;
+
                 db.WeatherRecords.AddRange(records.Select(r => ConvertToWeatherRecord(state, r)));
                 db.SaveChanges();
 
@@ -123,6 +128,9 @@ namespace DataImport
             int month = Convert.ToInt32(record.Date.Trim().Substring(4, 2));
             int day = Convert.ToInt32(record.Date.Trim().Substring(6, 2));
             weatherRecord.Date = new DateTime(year, month, day);
+
+            DateTimeFormatInfo dfi = DateTimeFormatInfo.CurrentInfo;
+            weatherRecord.Week = dfi.Calendar.GetWeekOfYear(weatherRecord.Date, CalendarWeekRule.FirstDay, DayOfWeek.Sunday);
 
             weatherRecord.MeanTemperature = Convert.ToSingle(Regex.Replace(record.MeanTemperature, "[A-Za-z *]", ""));
             weatherRecord.MinimumTemperature = Convert.ToSingle(Regex.Replace(record.MinimumTemperature, "[A-Za-z *]", ""));

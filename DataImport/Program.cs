@@ -46,9 +46,9 @@ namespace DataImport
                 LocationImporter locationImporter = new LocationImporter(context);
                 locationImporter.ImportStates();
 
-                Console.WriteLine("Importing Diseases");
-                DiseaseImporter diseaseImporter = new DiseaseImporter(context);
-                diseaseImporter.ImportAllDiseases(dataDirectory);
+                //Console.WriteLine("Importing Diseases");
+                //DiseaseImporter diseaseImporter = new DiseaseImporter(context);
+                //diseaseImporter.ImportAllDiseases(dataDirectory);
 
                 Console.WriteLine("Importing Weather");
                 WeatherImporter weatherImporter = new WeatherImporter(context);
