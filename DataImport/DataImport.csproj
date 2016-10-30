@@ -125,6 +125,7 @@
     <Compile Include="CsvModels\CsvWeatherRecord.cs" />
     <Compile Include="DiseaseImporter.cs" />
     <Compile Include="Diseases.cs" />
+    <Compile Include="EnumerableWeeklyAverageExtension.cs" />
     <Compile Include="LocationImporter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

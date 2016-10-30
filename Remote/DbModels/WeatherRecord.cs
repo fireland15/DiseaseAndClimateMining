@@ -17,6 +17,9 @@ namespace Remote.DbModels
         public DateTime Date { get; set; }
 
         [Required]
+        public int Year { get; set; }
+
+        [Required]
         public int Week { get; set; }
 
         [Required]

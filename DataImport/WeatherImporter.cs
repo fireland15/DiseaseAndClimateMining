@@ -102,11 +102,11 @@ namespace DataImport
 
                 var count = _context.WeatherRecords.Count();
 
-                IEnumerable<WeatherRecord> dailyRecords = records.Select(r => ConvertToWeatherRecord(state, r));
+                IEnumerable<WeatherRecord> dailyRecords = records.Select(r => ConvertToWeatherRecord(state, r)).ToList();
 
-                IEnumerable<WeatherRecord> weeklyRecords;
+                IEnumerable<WeatherRecord> weeklyRecords = dailyRecords.CalculateWeeklyAverages();
 
-                db.WeatherRecords.AddRange(records.Select(r => ConvertToWeatherRecord(state, r)));
+                db.WeatherRecords.AddRange(weeklyRecords);
                 db.SaveChanges();
 
                 newRecordsCount = _context.WeatherRecords.Count() - count;
@@ -132,19 +132,38 @@ namespace DataImport
             DateTimeFormatInfo dfi = DateTimeFormatInfo.CurrentInfo;
             weatherRecord.Week = dfi.Calendar.GetWeekOfYear(weatherRecord.Date, CalendarWeekRule.FirstDay, DayOfWeek.Sunday);
 
-            weatherRecord.MeanTemperature = Convert.ToSingle(Regex.Replace(record.MeanTemperature, "[A-Za-z *]", ""));
-            weatherRecord.MinimumTemperature = Convert.ToSingle(Regex.Replace(record.MinimumTemperature, "[A-Za-z *]", ""));
-            weatherRecord.MaximumTemperature = Convert.ToSingle(Regex.Replace(record.MaximumTemperature, "[A-Za-z *]", ""));
-            weatherRecord.Dewpoint = Convert.ToSingle(record.Dewpoint);
-            weatherRecord.SeaLevelPressure = Convert.ToSingle(record.SeaLevelPressure.Trim() == "9999.9" ? null : record.SeaLevelPressure);
-            weatherRecord.StationPressure = Convert.ToSingle(record.StationPressure.Trim() == "9999.9" ? null : record.StationPressure);
-            weatherRecord.Visibility = Convert.ToSingle(record.Visibility);
-            weatherRecord.WindSpeed = Convert.ToSingle(Regex.Replace(record.WindSpeed, "[A-Za-z *]", ""));
-            weatherRecord.MaxWindSpeed = Convert.ToSingle(Regex.Replace(record.MaxWindSpeed, "[A-Za-z *]", ""));
-            float precipitation = Convert.ToSingle(Regex.Replace(record.Precipitation, "[A-Za-z *]", ""));
-            weatherRecord.Precipitation = precipitation == 99.99f ? 0.00f : precipitation;
-            float snowDepth = Convert.ToSingle(Regex.Replace(record.SnowDepth, "[A-Za-z *]", ""));
-            weatherRecord.SnowDepth = snowDepth == 999.9f ? 0.00f : snowDepth;
+            string temp = Regex.Replace(record.MeanTemperature, "[A-Za-z *]", "");
+            weatherRecord.MeanTemperature = Convert.ToSingle(temp == "9999.9" ? "-1" : temp);
+
+            string minTemp = Regex.Replace(record.MinimumTemperature, "[A-Za-z *]", "");
+            weatherRecord.MinimumTemperature = Convert.ToSingle(minTemp == "9999.9" ? "-1" : minTemp);
+
+            string maxTemp = Regex.Replace(record.MaximumTemperature, "[A-Za-z *]", "");
+            weatherRecord.MaximumTemperature = Convert.ToSingle(maxTemp == "9999.9" ? "-1" : maxTemp);
+
+            weatherRecord.Dewpoint = Convert.ToSingle(record.Dewpoint == "9999.9" ? "-1" : record.SeaLevelPressure);
+
+            string seaLevelPressure = record.SeaLevelPressure.Trim();
+            weatherRecord.SeaLevelPressure = Convert.ToSingle(seaLevelPressure == "9999.9" ? "-1" : seaLevelPressure);
+
+            string stationPressure = record.StationPressure.Trim();
+            weatherRecord.StationPressure = Convert.ToSingle(stationPressure == "999.9" ? "-1" : stationPressure);
+
+            string visibility = record.Visibility == "999.9" ? "-1" : record.Visibility;
+            weatherRecord.Visibility = Convert.ToSingle(visibility);
+
+            string windSpeed = Regex.Replace(record.WindSpeed, "[A-Za-z *]", "");
+            weatherRecord.WindSpeed = Convert.ToSingle(windSpeed == "999.9" ? "-1" : windSpeed);
+
+            string maxWindSpeed = Regex.Replace(record.MaxWindSpeed, "[A-Za-z *]", "");
+            weatherRecord.MaxWindSpeed = Convert.ToSingle(maxWindSpeed == "999.9" ? "-1" : maxWindSpeed);
+
+            string precipitation =Regex.Replace(record.Precipitation, "[A-Za-z *]", "");
+            weatherRecord.Precipitation = Convert.ToSingle(precipitation == "99.99" ? "-1" : precipitation);
+
+            string snowDepth = Regex.Replace(record.SnowDepth, "[A-Za-z *]", "");
+            weatherRecord.SnowDepth = Convert.ToSingle(snowDepth == "999.9" ? "0" : snowDepth);
+
             weatherRecord.HasFog = record.WeatherPhonomena[0] == '1';
             weatherRecord.HasRainOrDrizzle = record.WeatherPhonomena[1] == '1';
             weatherRecord.HasSnowOrIce = record.WeatherPhonomena[2] == '1';
