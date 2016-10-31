@@ -1,9 +1,11 @@
 ﻿using CsvHelper.Configuration;
+using System;
 
 namespace DataImport.CsvModels.CsvMaps
 {
     public class RabiesMap : CsvClassMap<CsvDiseaseRecord>
     {
+        [Obsolete]
         public override void CreateMap()
         {
             Map(m => m.Location).Name("Reporting Area");

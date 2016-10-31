@@ -2,7 +2,6 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 
 namespace DataImport
 {
@@ -33,6 +32,7 @@ namespace DataImport
                 context.Database.CommandTimeout = 3000;
                 context.Database.ExecuteSqlCommand("DELETE FROM [dbo].[DiseaseRecords]");
                 context.Database.ExecuteSqlCommand("DELETE FROM [dbo].[Locations]");
+                context.Database.ExecuteSqlCommand("DELETE FROM [dbo].[WeatherRecords]");
                 context.SaveChanges();
             }
         }
@@ -46,9 +46,9 @@ namespace DataImport
                 LocationImporter locationImporter = new LocationImporter(context);
                 locationImporter.ImportStates();
 
-                //Console.WriteLine("Importing Diseases");
-                //DiseaseImporter diseaseImporter = new DiseaseImporter(context);
-                //diseaseImporter.ImportAllDiseases(dataDirectory);
+                Console.WriteLine("Importing Diseases");
+                DiseaseImporter diseaseImporter = new DiseaseImporter(context);
+                diseaseImporter.ImportAllDiseases(dataDirectory);
 
                 Console.WriteLine("Importing Weather");
                 WeatherImporter weatherImporter = new WeatherImporter(context);

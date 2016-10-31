@@ -141,15 +141,16 @@ namespace DataImport
             string maxTemp = Regex.Replace(record.MaximumTemperature, "[A-Za-z *]", "");
             weatherRecord.MaximumTemperature = Convert.ToSingle(maxTemp == "9999.9" ? "-1" : maxTemp);
 
-            weatherRecord.Dewpoint = Convert.ToSingle(record.Dewpoint == "9999.9" ? "-1" : record.SeaLevelPressure);
+            string dewPoint = record.Dewpoint.Trim() == "9999.9" ? "-1" : record.Dewpoint.Trim();
+            weatherRecord.Dewpoint = Convert.ToSingle(dewPoint);
 
             string seaLevelPressure = record.SeaLevelPressure.Trim();
             weatherRecord.SeaLevelPressure = Convert.ToSingle(seaLevelPressure == "9999.9" ? "-1" : seaLevelPressure);
 
             string stationPressure = record.StationPressure.Trim();
-            weatherRecord.StationPressure = Convert.ToSingle(stationPressure == "999.9" ? "-1" : stationPressure);
+            weatherRecord.StationPressure = Convert.ToSingle(stationPressure == "9999.9" ? "-1" : stationPressure);
 
-            string visibility = record.Visibility == "999.9" ? "-1" : record.Visibility;
+            string visibility = record.Visibility.Trim() == "999.9" ? "-1" : record.Visibility.Trim();
             weatherRecord.Visibility = Convert.ToSingle(visibility);
 
             string windSpeed = Regex.Replace(record.WindSpeed, "[A-Za-z *]", "");

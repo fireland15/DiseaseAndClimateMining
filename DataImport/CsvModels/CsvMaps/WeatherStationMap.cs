@@ -1,9 +1,11 @@
 ﻿using CsvHelper.Configuration;
+using System;
 
 namespace DataImport.CsvModels.CsvMaps
 {
     public class WeatherStationMap : CsvClassMap<CsvWeatherRecord>
     {
+        [Obsolete]
         public override void CreateMap()
         {
             Map(m => m.StationNumber).Name("STN---");
