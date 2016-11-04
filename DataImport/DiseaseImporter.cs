@@ -15,7 +15,6 @@ namespace DataImport
     {
         private DataContext _db;
         private Stopwatch _timer;
-        private List<Location> _states;
 
         public DiseaseImporter(DataContext db)
         {
@@ -23,9 +22,6 @@ namespace DataImport
                 throw new ArgumentNullException(nameof(db), "The db must not be null");
 
             _db = db;
-
-            _states = _db.Locations.ToList();// caches locations in the class so that there are fewer db calls. Makes importing faster.
-
             _timer = new Stopwatch();
         }
 
@@ -176,8 +172,7 @@ namespace DataImport
                 var count = _db.DiseaseRecords.Count();
 
                 _db.DiseaseRecords
-                    .AddRange(records.Where(x => _states.Any(y => y.Name.Equals(x.Location, StringComparison.CurrentCultureIgnoreCase)))
-                                     .Select(x => ConvertToDiseaseRecord(disease, x)));
+                    .AddRange(records.Select(x => ConvertToDiseaseRecord(disease, x)));
                 _db.SaveChanges();
 
                 newRecordsCount = _db.DiseaseRecords.Count() - count;
@@ -194,10 +189,10 @@ namespace DataImport
             return new DiseaseRecord
             {
                 DiseaseName = disease,
-                Location = _states.Single(x => x.Name.Equals(record.Location, StringComparison.CurrentCultureIgnoreCase)),
+                Location = record.Location.ToUpper(),
                 Year = record.Year,
-                Week = Convert.ToInt32(record.Week != string.Empty ? record.Week : "0"),
-                NewInfections = Convert.ToInt32(record.NewInfections != string.Empty ? record.NewInfections : "0")
+                Week = Convert.ToInt32(record.Week != string.Empty ? record.Week : "-1"),
+                NewInfections = Convert.ToInt32(record.NewInfections != string.Empty ? record.NewInfections : "-1")
             };
         }
 

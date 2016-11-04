@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Remote.DbModels
 {
@@ -12,7 +11,7 @@ namespace Remote.DbModels
         public string DiseaseName { get; set; }
         
         [Required]
-        public int LocationId { get; set; }
+        public string Location { get; set; }
         
         [Required]
         public string Year { get; set; }
@@ -22,8 +21,5 @@ namespace Remote.DbModels
 
         [Required]
         public int NewInfections { get; set; }
-
-        [ForeignKey(nameof(LocationId))]
-        public virtual Location Location { get; set; }
     }
 }

@@ -16,7 +16,6 @@ namespace DataImport
     {
         private DataContext _context;
         private Stopwatch _timer;
-        private List<Location> _states;
 
         public WeatherImporter(DataContext context)
         {
@@ -24,7 +23,6 @@ namespace DataImport
                 throw new ArgumentNullException(nameof(context));
 
             _context = context;
-            _states = _context.Locations.ToList();
             _timer = new Stopwatch();
         }
 
@@ -122,7 +120,7 @@ namespace DataImport
         {
 
             WeatherRecord weatherRecord = new WeatherRecord();
-            weatherRecord.Location = _states.Single(s => s.Name.Equals(state, StringComparison.CurrentCultureIgnoreCase));
+            weatherRecord.Location = state.ToUpper();
 
             int year = Convert.ToInt32(record.Date.Trim().Substring(0, 4));
             int month = Convert.ToInt32(record.Date.Trim().Substring(4, 2));

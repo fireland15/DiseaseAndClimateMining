@@ -31,7 +31,6 @@ namespace DataImport
             {
                 context.Database.CommandTimeout = 3000;
                 context.Database.ExecuteSqlCommand("DELETE FROM [dbo].[DiseaseRecords]");
-                context.Database.ExecuteSqlCommand("DELETE FROM [dbo].[Locations]");
                 context.Database.ExecuteSqlCommand("DELETE FROM [dbo].[WeatherRecords]");
                 context.SaveChanges();
             }
@@ -41,11 +40,6 @@ namespace DataImport
         {
             using (DataContext context = new DataContext("DataMiningProjectDb"))
             {
-
-                Console.WriteLine("Importing Locations");
-                LocationImporter locationImporter = new LocationImporter(context);
-                locationImporter.ImportStates();
-
                 Console.WriteLine("Importing Diseases");
                 DiseaseImporter diseaseImporter = new DiseaseImporter(context);
                 diseaseImporter.ImportAllDiseases(dataDirectory);

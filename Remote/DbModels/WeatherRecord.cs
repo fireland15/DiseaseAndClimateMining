@@ -10,7 +10,7 @@ namespace Remote.DbModels
         public int Id { get; set; }
 
         [Required]
-        public int LocationId { get; set; }
+        public string Location { get; set; }
 
         [Required]
         [NotMapped]
@@ -70,8 +70,5 @@ namespace Remote.DbModels
 
         [Required]
         public bool HasTornado { get; set; }
-
-        [ForeignKey(nameof(LocationId))]
-        public virtual Location Location { get; set; }
     }
 }
